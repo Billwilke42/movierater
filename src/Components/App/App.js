@@ -5,12 +5,14 @@ import CardContainer from '../CardContainer/CardContainer'
 import HomeSearchModel from '../HomeSearchModel/HomeSearchModal'
 import { getMovies } from '../../apiCalls/getMovies'
 import { getMovieDetails } from '../../apiCalls/getMovieDetails'
+import { getRating } from '../../apiCalls/getRating'
 import { Switch, Route } from 'react-router-dom'
 import MoviePage from '../MoviePage/MoviePage';
 
 const App = () => {
   const [allMovies, setAllMovies ] = useState([])
   const [movieDetails, setMovieDetails ] = useState({})
+  const [movieRating, setMovieRating ] = useState({})
   const [hasErrored, setHasErrored] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
@@ -23,7 +25,9 @@ const App = () => {
     setIsLoading(true)
     try {
       const data = await getMovieDetails(imdbID)
+      const rating = await getRating(imdbID)
       if(data) {
+        setMovieRating(rating)
         setMovieDetails(data)
         return setIsLoading(false)
       }
