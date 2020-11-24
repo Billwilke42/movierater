@@ -1,0 +1,8 @@
+.home-search-model {
+  height: 40vh;
+  width: 50vw;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}

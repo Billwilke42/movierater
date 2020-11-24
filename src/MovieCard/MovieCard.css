@@ -1,0 +1,14 @@
+.movie-pic {
+  width: 280px;
+  height: 390px;
+
+}
+.movie-card {
+  height: 420px;
+  border: 1px solid black;
+  margin-top: 10px;
+}
+
+h5 {
+  margin: 2px;
+}
