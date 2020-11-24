@@ -8,7 +8,7 @@ import { getMovieDetails } from '../../apiCalls/getMovieDetails'
 import { Switch, Route } from 'react-router-dom'
 import MoviePage from '../MoviePage/MoviePage';
 
-function App() {
+const App = () => {
   const [allMovies, setAllMovies ] = useState([])
   const [movieDetails, setMovieDetails ] = useState({})
   const [hasErrored, setHasErrored] = useState('')
@@ -55,7 +55,7 @@ function App() {
     <main className='App'>
       <Switch>
         <Route path='/movie/:imdbID'>
-          <Header searchMovie={searchAllMovies} />
+          <Header searchMovies={searchAllMovies} />
           {isLoading ? loading() :
             <MoviePage 
               movie={movieDetails} 
@@ -72,7 +72,9 @@ function App() {
           }
         </Route>
         <Route path='/'>
-          <HomeSearchModel searchMovies={searchAllMovies} />
+          <HomeSearchModel 
+            searchMovies={searchAllMovies} 
+          />
         </Route>
       </Switch>
     </main>
