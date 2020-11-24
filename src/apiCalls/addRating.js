@@ -10,6 +10,7 @@ export const addRating = async (imdbID, rating) => {
       rating: rating
     })
   })
+  console.log(response)
   if(response.ok) {
     const data = await response.json()
     return data

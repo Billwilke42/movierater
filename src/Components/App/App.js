@@ -6,6 +6,7 @@ import HomeSearchModel from '../HomeSearchModel/HomeSearchModal'
 import { getMovies } from '../../apiCalls/getMovies'
 import { getMovieDetails } from '../../apiCalls/getMovieDetails'
 import { getRating } from '../../apiCalls/getRating'
+import { addRating } from '../../apiCalls/addRating'
 import { Switch, Route } from 'react-router-dom'
 import MoviePage from '../MoviePage/MoviePage';
 
@@ -20,12 +21,34 @@ const App = () => {
     const imdbID = event.target.id;
     await getMovieInfo(imdbID)
   }
+  
+  const handleRating = async (event, imdbID) => {
+    const className = event.target.className
+    if(className === 'thumbs-up') {
+      await giveRating(imdbID, 1)
+    } else {
+      await giveRating(imdbID, -1)
+    }
+  }
 
-  const getMovieInfo = async (imdbID) => {
+  const giveRating = async (imdbID, rating) => {
+    try {
+      const data = await addRating(imdbID, rating)
+      if(data) {
+        const newRating = await getRating(imdbID)
+        setMovieRating(newRating)
+      }
+    } catch(error) {
+      setHasErrored(error.toString())
+    }
+  }
+
+  const getMovieInfo = async (imdb_ID) => {
+    debugger
     setIsLoading(true)
     try {
-      const data = await getMovieDetails(imdbID)
-      const rating = await getRating(imdbID)
+      const rating = await getRating(imdb_ID)
+      const data = await getMovieDetails(imdb_ID)
       if(data) {
         setMovieRating(rating)
         setMovieDetails(data)
@@ -61,7 +84,9 @@ const App = () => {
         <Route path='/movie/:imdbID'>
           <Header searchMovies={searchAllMovies} />
           {isLoading ? loading() :
-            <MoviePage 
+            <MoviePage
+              handleRating={handleRating}
+              rating={movieRating} 
               movie={movieDetails} 
             />
           }
