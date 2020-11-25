@@ -89,6 +89,7 @@ const App = () => {
             movie={movieDetails} 
             />
           }
+          {/* {movieDetails === null && <Redirect to='/'/>} */}
         </Route>
         <Route path='/search/:searchValue'>
           <Header searchMovies={searchAllMovies}/>
@@ -98,6 +99,7 @@ const App = () => {
               movies={allMovies}
             />
           }
+          {/* {allMovies.length === 0 && <Redirect to='/'/>} */}
         </Route>
         <Route path='/'>
           <HomeSearchModel 

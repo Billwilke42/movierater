@@ -3,9 +3,9 @@ import './CardContainer.css'
 import MovieCard from '../MovieCard/MovieCard'
 
 const CardContainer = ({ movies, handleClick }) => {
-  // eslint-disable-next-line array-callback-return
   let allMovies;
   if(movies) {
+    // eslint-disable-next-line array-callback-return
     allMovies = movies.map(movie => {
     if (movie.Poster !== "N/A" && movie.Type === 'movie') {
       return (
@@ -14,7 +14,7 @@ const CardContainer = ({ movies, handleClick }) => {
           movie={movie}
         />
       )
-    }
+    } 
   })}
   return (
     <section className='card-container'>
