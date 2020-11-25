@@ -16,7 +16,8 @@ const Search = ({ searchMovies }) => {
       <Link to={`/search/${searchInput}`}>
         <button 
           className='search-btn' 
-          type='submit' 
+          type='submit'
+          data-testid='search-btn'
           onClick={e => searchMovies(searchInput)}>
             <SearchIcon />
         </button>
