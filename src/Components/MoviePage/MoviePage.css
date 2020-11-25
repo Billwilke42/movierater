@@ -24,19 +24,39 @@
 
 .rating-box {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   font-size: 24px;
   align-items: center;
+  margin: 0;
 }
 
 .movie-title {
-  font-size: 36px;
-  margin-bottom: 3px;
+  font-size: 48px;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-family: 'Suez One', serif;
 }
 
 .movie-summary {
   font-size: 18px;
   overflow: scroll;
+  text-align: left;
+}
+
+.synopsis {
+  margin-top: 0;
+}
+
+.error-card {
+  justify-content: space-evenly;
+}
+
+.return-home {
+  background-color: #00adb5;
+  font-size: 24px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .thumbs-up-btn,
@@ -46,6 +66,7 @@
   background-color: white;
   border-radius: 4px;
   padding: 5px;
+  margin: 10px;
   border: 2px solid #e7e7e7;
 }
 
@@ -64,6 +85,8 @@
   margin-left: 50px;
 } */
 
+.return-home:hover,
+.return-home:focus,
 .thumbs-up-btn:hover,
 .thumbs-up-btn:focus,
 .thumbs-down-btn:hover,
@@ -76,3 +99,25 @@
   transition: transform .3s;
   opacity: .95;
 }
+
+/* @media only screen and (max-width: 450px) {
+  .movie-page {
+    flex-direction: column;
+    height: fit-content;
+    overflow: scroll;
+    width: 100vw;
+  }
+
+  .instruction {
+    font-size: 12px;
+  }
+  .movie-title {
+    font-size: 18px;
+  }
+  .movie-poster-selected {
+    width: 140px;
+    height: 195px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 15px black;
+  }
+} */

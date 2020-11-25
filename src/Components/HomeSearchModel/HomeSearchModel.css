@@ -1,15 +1,15 @@
+.error-card,
 .home-search-model {
   height: 40vh;
   width: 50vw;
-  border: 1px solid black;
   display: flex;
-  /* justify-content: space-evenly; */
   align-items: center;
   margin: auto;
   margin-top: 25vh;
   flex-direction: column;
   background-color: #eeeeee;
   border-radius: 15px;
+  box-shadow: 15px 15px 0px 0px #00adb5
 }
 
 .app-name {
@@ -17,14 +17,10 @@
   font-family: 'Suez One', serif;
 }
 
-/* .move-icon-container {
-  height: 48px;
-  width: 48px;
-} */
-
-/* .movie-icon {
-  transform: scale(1.2)
-} */
+.film-icon {
+  height: 50px;
+  width: 55px;
+}
 
 .welcome-inst {
   margin-top: 50px;

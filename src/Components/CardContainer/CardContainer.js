@@ -18,7 +18,10 @@ const CardContainer = ({ movies, handleClick }) => {
   })}
   return (
     <section className='card-container'>
-      {allMovies ? allMovies : <p>Try a different search, try to be precise</p>}
+      {allMovies ? allMovies : 
+        <p className='diff-search-msg'>
+          Try a different search, please try to be precise.
+        </p>}
     </section>
   )
 }

@@ -7,7 +7,6 @@ export const getMovieDetails = async (imdbID) => {
       "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com"
     }
   })
-  console.log(response)
   if(response.ok) {
     const data = await response.json()
     return data

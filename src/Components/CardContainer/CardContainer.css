@@ -7,3 +7,10 @@
   background-color: #222831;
   overflow-y: scroll;
 }
+
+.diff-search-msg {
+  height: 30vh;
+  margin-top: 30vh;
+  font-size: 36px;
+  color: #eeee;
+}

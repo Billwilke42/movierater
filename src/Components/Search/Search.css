@@ -7,7 +7,6 @@ input {
   padding: 10px;
 }
 .search {
-  height: 48px;
   /* margin-bottom: 40px; */
   display: inherit;
 }
@@ -29,7 +28,7 @@ input {
   cursor: pointer;
   background-color: #00adb5;
   /* box-shadow: 0 0 3px 3px #00adb5; */
-  transform: scale(1.03);
+  transform: scale(1.08);
   transition: transform .3s;
   opacity: .95;
 }
