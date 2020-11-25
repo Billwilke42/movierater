@@ -4,7 +4,9 @@ import MovieCard from '../MovieCard/MovieCard'
 
 const CardContainer = ({ movies, handleClick }) => {
   // eslint-disable-next-line array-callback-return
-  const allMovies = movies.map(movie => {
+  let allMovies;
+  if(movies) {
+    allMovies = movies.map(movie => {
     if (movie.Poster !== "N/A" && movie.Type === 'movie') {
       return (
         <MovieCard 
@@ -13,10 +15,10 @@ const CardContainer = ({ movies, handleClick }) => {
         />
       )
     }
-  })
+  })}
   return (
     <section className='card-container'>
-      {allMovies}
+      {allMovies ? allMovies : <p>Try a different search, try to be precise</p>}
     </section>
   )
 }
