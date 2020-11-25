@@ -33,7 +33,6 @@ const App = () => {
   }
 
   const giveRating = async (imdbID, thumbsUp, thumbsDown) => {
-    debugger
     try {
       const data = await addRating(imdbID, thumbsUp, thumbsDown)
       const newRating = await getRating(imdbID)
@@ -46,7 +45,6 @@ const App = () => {
   }
 
   const getMovieInfo = async (imdb_id) => {
-    debugger
     setIsLoading(true)
     try {
       const rating = await getRating(imdb_id)

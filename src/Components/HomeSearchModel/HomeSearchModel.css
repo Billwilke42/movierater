@@ -3,6 +3,31 @@
   width: 50vw;
   border: 1px solid black;
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   align-items: center;
+  margin: auto;
+  margin-top: 25vh;
+  flex-direction: column;
+  background-color: #eeeeee;
+  border-radius: 15px;
+}
+
+.app-name {
+  font-size: 54px;
+  font-family: 'Suez One', serif;
+}
+
+/* .move-icon-container {
+  height: 48px;
+  width: 48px;
+} */
+
+/* .movie-icon {
+  transform: scale(1.2)
+} */
+
+.welcome-inst {
+  margin-top: 50px;
+  font-style: italic;
+  font-size: 24px;
 }

@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom'
 
 const MovieCard = ( { movie, handleClick } ) => {
   return (
-    <Link to={`/movie/${movie.imdbID}`}>
+    <Link 
+      to={`/movie/${movie.imdbID}`}
+      style={{textDecoration: 'none'}}>
       <div 
         onClick={e => handleClick(e)}
         className='movie-card'
@@ -15,7 +17,7 @@ const MovieCard = ( { movie, handleClick } ) => {
           src={movie.Poster}
           key={movie.imdbID}
         />
-        <h5>{movie.Title}</h5>
+        {/* <h5>{movie.Title}</h5> */}
       </div>
     </Link>
   )

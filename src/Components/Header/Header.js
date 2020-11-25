@@ -5,7 +5,7 @@ import Search from '../Search/Search'
 const Header = ({ searchMovies }) => {
   return (
     <header>
-      <h2>Movie Challenge</h2>
+      <h2 className='header-app-name'>Movie Rater</h2>
       <Search searchMovies={searchMovies}/>
     </header>
   )

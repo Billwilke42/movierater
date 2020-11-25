@@ -1,6 +1,9 @@
 .card-container {
   height: 90vh;
+  width: 100vw;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  background-color: #222831;
+  overflow-y: scroll;
 }

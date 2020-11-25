@@ -1,9 +1,12 @@
 .App {
-  /* display: flex;
+  /* display: flex; 
   justify-content: center;
   align-items: center; */
+  position: fixed;
   height: 100vh;
   width: 100vw;
+  flex-wrap: wrap;
+  background-color: #222831;
 }
 
 #blockColorblindContent {
