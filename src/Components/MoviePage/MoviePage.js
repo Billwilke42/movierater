@@ -14,13 +14,13 @@ const MoviePage = ({movie, rating, handleRating}) => {
         />
         <section className='rating-box'>
           <p className='thumbs-up'>
-            +{rating.thumbs_up}
+            +{rating[0].thumbs_up}
           </p>
             <button type='submit' className='thumbs-up' onClick={e => handleRating(e, movie.imdbID)}>
               Thumbs up
             </button>
           <p className='thumbs-down'>
-            -{rating.thumbs_down}
+            -{rating[0].thumbs_down}
           </p>
             <button type='submit' className='thumbs-down' onClick={e => handleRating(e, movie.imdbID)}>
             Thumbs down

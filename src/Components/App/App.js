@@ -23,19 +23,21 @@ const App = () => {
   }
   
   const handleRating = async (event, imdbID) => {
+    debugger
     const className = event.target.className
     if(className === 'thumbs-up') {
-      await giveRating(imdbID, 1)
+      await giveRating(imdbID, movieRating[0].thumbs_up + 1, movieRating[0].thumbs_down)
     } else {
-      await giveRating(imdbID, -1)
+      await giveRating(imdbID, movieRating[0].thumbs_up, movieRating[0].thumbs_down + 1)
     }
   }
 
-  const giveRating = async (imdbID, rating) => {
+  const giveRating = async (imdbID, thumbsUp, thumbsDown) => {
+    debugger
     try {
-      const data = await addRating(imdbID, rating)
+      const data = await addRating(imdbID, thumbsUp, thumbsDown)
+      const newRating = await getRating(imdbID)
       if(data) {
-        const newRating = await getRating(imdbID)
         setMovieRating(newRating)
       }
     } catch(error) {
@@ -43,12 +45,12 @@ const App = () => {
     }
   }
 
-  const getMovieInfo = async (imdb_ID) => {
+  const getMovieInfo = async (imdb_id) => {
     debugger
     setIsLoading(true)
     try {
-      const rating = await getRating(imdb_ID)
-      const data = await getMovieDetails(imdb_ID)
+      const rating = await getRating(imdb_id)
+      const data = await getMovieDetails(imdb_id)
       if(data) {
         setMovieRating(rating)
         setMovieDetails(data)
@@ -81,7 +83,7 @@ const App = () => {
   return (
     <main className='App'>
       <Switch>
-        <Route path='/movie/:imdbID'>
+        <Route path='/movie/:imdb_id'>
           <Header searchMovies={searchAllMovies} />
           {isLoading ? loading() :
             <MoviePage

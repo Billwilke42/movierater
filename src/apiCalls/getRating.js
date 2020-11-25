@@ -1,5 +1,5 @@
-export const getRating = async (imdb_ID) => {
-  const url = `http://localhost:3001/api/v1/movie/${imdb_ID}/ratings`
+export const getRating = async (imdb_id) => {
+  const url = `http://localhost:3001/movie/${imdb_id}/ratings`
   const response = await fetch(url)
   if(response.ok) {
     const data = await response.json()
