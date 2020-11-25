@@ -7,13 +7,13 @@ import { getMovies } from '../../apiCalls/getMovies'
 import { getMovieDetails } from '../../apiCalls/getMovieDetails'
 import { getRating } from '../../apiCalls/getRating'
 import { addRating } from '../../apiCalls/addRating'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import MoviePage from '../MoviePage/MoviePage';
 
 const App = () => {
   const [allMovies, setAllMovies ] = useState([])
-  const [movieDetails, setMovieDetails ] = useState({})
-  const [movieRating, setMovieRating ] = useState({})
+  const [movieDetails, setMovieDetails ] = useState(null)
+  const [movieRating, setMovieRating ] = useState(null)
   const [hasErrored, setHasErrored] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
@@ -23,7 +23,6 @@ const App = () => {
   }
   
   const handleRating = async (event, imdbID) => {
-    debugger
     const className = event.target.className
     if(className === 'thumbs-up') {
       await giveRating(imdbID, movieRating[0].thumbs_up + 1, movieRating[0].thumbs_down)
@@ -33,9 +32,8 @@ const App = () => {
   }
 
   const giveRating = async (imdbID, thumbsUp, thumbsDown) => {
-    debugger
     try {
-      const data = await addRating(imdbID, thumbsUp, thumbsDown)
+      const data = await addRating(imdbID, thumbsUp, thumbsDown, movieDetails.Title)
       const newRating = await getRating(imdbID)
       if(data) {
         setMovieRating(newRating)
@@ -46,7 +44,6 @@ const App = () => {
   }
 
   const getMovieInfo = async (imdb_id) => {
-    debugger
     setIsLoading(true)
     try {
       const rating = await getRating(imdb_id)
@@ -87,11 +84,12 @@ const App = () => {
           <Header searchMovies={searchAllMovies} />
           {isLoading ? loading() :
             <MoviePage
-              handleRating={handleRating}
-              rating={movieRating} 
-              movie={movieDetails} 
+            handleRating={handleRating}
+            rating={movieRating} 
+            movie={movieDetails} 
             />
           }
+          {/* {movieDetails === null && <Redirect to='/'/>} */}
         </Route>
         <Route path='/search/:searchValue'>
           <Header searchMovies={searchAllMovies}/>
@@ -101,6 +99,7 @@ const App = () => {
               movies={allMovies}
             />
           }
+          {/* {allMovies.length === 0 && <Redirect to='/'/>} */}
         </Route>
         <Route path='/'>
           <HomeSearchModel 

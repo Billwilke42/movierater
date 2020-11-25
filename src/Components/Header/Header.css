@@ -1,8 +1,25 @@
 header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   height: 10vh;
   width: 100vw;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  background-color: #eeeeee;
+  /* top: 0; */
+  /* position: absolute; */
+}
+
+.header-app-name {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 10px;
+  font-size: 4vw;
+  font-family: 'Suez One', serif;
+}
+
+@media only screen and (max-width: 450px) {
+  .film-icon {
+    display: none;
+  }
 }

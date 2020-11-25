@@ -1,4 +1,4 @@
-export const addRating = async (imdbID, thumbsUp, thumbsDown) => {
+export const addRating = async (imdbID, thumbsUp, thumbsDown, movieTitle) => {
   const url = 'http://localhost:3001/ratings'
   const response = await fetch(url, {
     method: 'POST',
@@ -8,10 +8,10 @@ export const addRating = async (imdbID, thumbsUp, thumbsDown) => {
     body: JSON.stringify({
       imdb_id: imdbID,
       thumbs_up: thumbsUp,
-      thumbs_down: thumbsDown
+      thumbs_down: thumbsDown,
+      title: movieTitle
     })
   })
-  console.log('add rating', response)
   if(response.ok) {
     const data = await response.json()
     return data
