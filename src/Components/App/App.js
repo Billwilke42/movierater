@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './App.css';
 import Header from '../Header/Header'
 import CardContainer from '../CardContainer/CardContainer'
-import HomeSearchModel from '../HomeSearchModel/HomeSearchModal'
+import HomeSearchModel from '../HomeSearchModel/HomeSearchModel'
 import { getMovies } from '../../apiCalls/getMovies'
 import { getMovieDetails } from '../../apiCalls/getMovieDetails'
 import { getRating } from '../../apiCalls/getRating'
