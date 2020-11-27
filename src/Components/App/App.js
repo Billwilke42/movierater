@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './App.css';
 import Header from '../Header/Header'
 import CardContainer from '../CardContainer/CardContainer'
@@ -77,6 +77,12 @@ const App = () => {
     )
   }
 
+  const errorMsg = () => {
+    return (
+      <h3>Error! Something went wrong.</h3>
+    )
+  }
+
   return (
     <main className='App'>
       <Switch>
@@ -89,7 +95,7 @@ const App = () => {
             movie={movieDetails} 
             />
           }
-          {/* {movieDetails === null && <Redirect to='/'/>} */}
+          {hasErrored && errorMsg()}
         </Route>
         <Route path='/search/:searchValue'>
           <Header searchMovies={searchAllMovies}/>
@@ -99,12 +105,13 @@ const App = () => {
               movies={allMovies}
             />
           }
-          {/* {allMovies.length === 0 && <Redirect to='/'/>} */}
+          {hasErrored && errorMsg()}
         </Route>
         <Route path='/'>
           <HomeSearchModel 
             searchMovies={searchAllMovies} 
           />
+          {hasErrored && errorMsg()}
         </Route>
       </Switch>
     </main>
