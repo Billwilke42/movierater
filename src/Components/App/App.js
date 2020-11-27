@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './App.css';
 import Header from '../Header/Header'
 import CardContainer from '../CardContainer/CardContainer'
-import HomeSearchModel from '../HomeSearchModel/HomeSearchModal'
+import HomeSearchModel from '../HomeSearchModel/HomeSearchModel'
 import { getMovies } from '../../apiCalls/getMovies'
 import { getMovieDetails } from '../../apiCalls/getMovieDetails'
 import { getRating } from '../../apiCalls/getRating'
 import { addRating } from '../../apiCalls/addRating'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import MoviePage from '../MoviePage/MoviePage';
 
 const App = () => {
@@ -77,6 +77,12 @@ const App = () => {
     )
   }
 
+  const errorMsg = () => {
+    return (
+      <h3>Error! Something went wrong.</h3>
+    )
+  }
+
   return (
     <main className='App'>
       <Switch>
@@ -89,7 +95,7 @@ const App = () => {
             movie={movieDetails} 
             />
           }
-          {/* {movieDetails === null && <Redirect to='/'/>} */}
+          {hasErrored && errorMsg()}
         </Route>
         <Route path='/search/:searchValue'>
           <Header searchMovies={searchAllMovies}/>
@@ -99,12 +105,13 @@ const App = () => {
               movies={allMovies}
             />
           }
-          {/* {allMovies.length === 0 && <Redirect to='/'/>} */}
+          {hasErrored && errorMsg()}
         </Route>
         <Route path='/'>
           <HomeSearchModel 
             searchMovies={searchAllMovies} 
           />
+          {hasErrored && errorMsg()}
         </Route>
       </Switch>
     </main>

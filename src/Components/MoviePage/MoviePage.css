@@ -1,6 +1,5 @@
 .movie-page {
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-evenly;
   align-items: center;
   align-items: center;
@@ -62,7 +61,6 @@
 .thumbs-up-btn,
 .thumbs-down-btn {
   height: fit-content;
-  /* border: none; */
   background-color: white;
   border-radius: 4px;
   padding: 5px;
@@ -81,10 +79,6 @@
   font-style: italic;
 }
 
-/* .thumbs-up-counter {
-  margin-left: 50px;
-} */
-
 .return-home:hover,
 .return-home:focus,
 .thumbs-up-btn:hover,
@@ -99,25 +93,3 @@
   transition: transform .3s;
   opacity: .95;
 }
-
-/* @media only screen and (max-width: 450px) {
-  .movie-page {
-    flex-direction: column;
-    height: fit-content;
-    overflow: scroll;
-    width: 100vw;
-  }
-
-  .instruction {
-    font-size: 12px;
-  }
-  .movie-title {
-    font-size: 18px;
-  }
-  .movie-poster-selected {
-    width: 140px;
-    height: 195px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 15px black;
-  }
-} */

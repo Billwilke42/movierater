@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import App from './App';
+import HomeSearchModel from './HomeSearchModel';
 import { MemoryRouter } from 'react-router-dom';
 
-describe('App', () => {
+const mockSearchMovies = jest.fn()
+
+describe('HomeSearchModel', () => {
   it('should render without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
       <MemoryRouter>
-        <App />
+        <HomeSearchModel />
       </MemoryRouter> , div);
     ReactDOM.unmountComponentAtNode(div);
   })
@@ -18,7 +20,7 @@ describe('App', () => {
   it('should render the home model', () => {
     const { getByText, getByPlaceholderText, getByRole } = render(
       <MemoryRouter>
-        <App />
+        <HomeSearchModel />
       </MemoryRouter>);
 
     const appName = getByText('Movie Rater')
@@ -28,5 +30,19 @@ describe('App', () => {
     expect(appName).toBeInTheDocument()
     expect(input).toBeInTheDocument()
     expect(button).toBeInTheDocument()
+  })
+
+  it('should call the search function when button is clicked', () => {
+    const { getByTestId } = render(
+      <MemoryRouter>
+        <HomeSearchModel searchMovies={mockSearchMovies}/>
+      </MemoryRouter>
+    )
+    
+    const button = getByTestId('search-btn')
+
+    fireEvent.click(button)
+
+    expect(mockSearchMovies).toBeCalledTimes(1)
   })
 })

@@ -6,12 +6,13 @@ const CardContainer = ({ movies, handleClick }) => {
   let allMovies;
   if(movies) {
     // eslint-disable-next-line array-callback-return
-    allMovies = movies.map(movie => {
+    allMovies = movies.map((movie, i) => {
     if (movie.Poster !== "N/A" && movie.Type === 'movie') {
       return (
         <MovieCard 
           handleClick={handleClick} 
           movie={movie}
+          key={i}
         />
       )
     } 

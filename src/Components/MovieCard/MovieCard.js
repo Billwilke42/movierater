@@ -9,15 +9,13 @@ const MovieCard = ( { movie, handleClick } ) => {
       style={{textDecoration: 'none'}}>
       <div 
         onClick={e => handleClick(e)}
-        className='movie-card'
-        key={movie.imdbID}>
-        <img className='movie-pic'
-          id={movie.imdbID}
-          alt={movie.Title}
-          src={movie.Poster}
-          key={movie.imdbID}
-        />
-        {/* <h5>{movie.Title}</h5> */}
+        className='movie-card'>
+          <img 
+            className='movie-pic'
+            id={movie.imdbID}
+            alt={movie.Title}
+            src={movie.Poster}
+          />
       </div>
     </Link>
   )
