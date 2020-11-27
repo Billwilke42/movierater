@@ -62,28 +62,28 @@ DB_DATABASE=movieapi
 DB_USER=(Your postgres username)
 ```
 
-7. Run in your terminal:
+8. Run in your terminal:
 
 ```bash
 $ node index.js
 ```
 
-8. Open a new terminal window. 
+9. Open a new terminal window. 
 
-9. Clone down this FE repository and cd into project folder.
+10. Clone down this FE repository and cd into project folder.
 
-10. If the given API key does not work. In your browser, go to https://rapidapi.com/rapidapi/api/Movie%20Database%20(IMDB%20Alternative), subscribe and add your given API key to a .env file in the Front End project folder.
+11. If the given API key does not work. In your browser, go to https://rapidapi.com/rapidapi/api/Movie%20Database%20(IMDB%20Alternative), subscribe and add your given API key to a .env file in the Front End project folder.
 
-10. In your terminal run: 
+12. In your terminal run: 
 
 ```bash
 $ npm install
 $ npm start
 ```
 
-11. You should now be able to view the application in your browser at http://localhost:3000/
+13. You should now be able to view the application in your browser at http://localhost:3000/
 
-12. Go ahead and search for some movies and add your ratings, if you run in your Postgres CLI:
+14. Go ahead and search for some movies and add your ratings, if you run in your Postgres CLI:
 
 ```bash
  $ SELECT * FROM ratings;
