@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+## Year One API Challenge
+[Bill Wilke](https://alumni.turing.io/alumni/bill-wilke)
+#### Back-End Repo
+https://github.com/Billwilke42/movie-rater-api
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Abstract
 
-## Available Scripts
+This challenge was completed YearOne. The challenge was to build a small web application that allows a user to search for a movie title, click on that movie title for more information, and give that movie a thumbs up or thumbs down. The challenge instructions allowed me to use and API of my choice for the search and displaying the movies information. For giving a rating of the selected movie, I had to make an API to save implement some type of storage or database to persist movie titles and how many thumbs up or thumbs down they’ve received.
 
-In the project directory, you can run:
+### Technology Used
 
-### `npm start`
+- React
+- JavaScript
+- React and Jest testing libraries
+- React Router
+- Git
+- Travis-CI
+- CSS
+- Postgres
+- Node.js
+- Express.js
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Set Up
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. If you do not have Postgres installed, go to their site and follow the docs: https://www.postgresqltutorial.com/install-postgresql/
 
-### `npm test`
+2. Go to the Back-End repo here: https://github.com/Billwilke42/movie-rater-api and clone it.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Cd into movie-rater-api folder and run in your terminal: 
 
-### `npm run build`
+```bash
+$ npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. On your command line run: 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+$ psql
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+$ CREATE DATABASE movieapi;
 
-### `npm run eject`
+$ CREATE TABLE ratings (imdb_id text, thumbs_up integer, thumbs_down integer, title text);
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+$ SELECT * FROM ratings;
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If everything went well you should see something like this on your command line: 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[![Screen-Shot-2020-11-27-at-10-40-34-AM.png](https://i.postimg.cc/sX2vwvyC/Screen-Shot-2020-11-27-at-10-40-34-AM.png)](https://postimg.cc/ns6FLVC3)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+5. Open a new terminal window.
 
-## Learn More
+6. Cd into movie-rater-api
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+7. Run in your terminal:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+$ node index.js
+```
 
-### Code Splitting
+8. Open a new terminal window. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+9. Clone down this repository and cd into project folder.
 
-### Analyzing the Bundle Size
+10. In your terminal run: 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+$ npm install
+$ npm start
+```
 
-### Making a Progressive Web App
+11. You should now be able to view the application in your browser at http://localhost:3000/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+12. Go ahead and search for some movies and add your ratings, if you run in your Postgres CLI:
 
-### Advanced Configuration
+```bash
+ $ SELECT * FROM ratings;
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+You should be able to view your ratings!
 
-### Deployment
+### GIFS and Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### Homepage
 
-### `npm run build` fails to minify
+[![Screen-Shot-2020-11-27-at-10-52-57-AM.png](https://i.postimg.cc/KzYd9gzb/Screen-Shot-2020-11-27-at-10-52-57-AM.png)](https://postimg.cc/DWtj00Lp)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Searching from Homepage
+
+[!Searching](https://media.giphy.com/media/V43kzlxYGjPV5pal0w/giphy.gif)
+
+
+
