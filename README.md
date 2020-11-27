@@ -87,7 +87,7 @@ You should be able to view your ratings!
 
 #### Searching from Homepage
 
-[!Searching](https://media.giphy.com/media/V43kzlxYGjPV5pal0w/giphy.gif)
+![Searching](https://media.giphy.com/media/V43kzlxYGjPV5pal0w/giphy.gif)
 
 
 
