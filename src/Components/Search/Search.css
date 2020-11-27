@@ -3,20 +3,16 @@ input {
   width: 480px;
   border: none;
   border-radius: 3px;
-  font-size: 18px;
+  font-size: 24px;
   padding: 10px;
 }
 .search {
-  /* margin-bottom: 40px; */
   display: inherit;
 }
 
 .search-btn {
   height: 68px;
   background-color: #00adb5;
-  /* font-size: 24px; */
-  /* padding: 25px; */
-  /* padding: 12px; */
   width: 60px;
   border: none;
   border-radius: 3px;
@@ -27,7 +23,6 @@ input {
   border: none;
   cursor: pointer;
   background-color: #00adb5;
-  /* box-shadow: 0 0 3px 3px #00adb5; */
   transform: scale(1.08);
   transition: transform .3s;
   opacity: .95;

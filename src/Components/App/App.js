@@ -7,7 +7,7 @@ import { getMovies } from '../../apiCalls/getMovies'
 import { getMovieDetails } from '../../apiCalls/getMovieDetails'
 import { getRating } from '../../apiCalls/getRating'
 import { addRating } from '../../apiCalls/addRating'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import MoviePage from '../MoviePage/MoviePage';
 
 const App = () => {

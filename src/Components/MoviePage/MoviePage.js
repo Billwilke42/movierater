@@ -1,6 +1,6 @@
 import React from 'react';
 import './MoviePage.css'
-import {Redirect, Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import ThumbsUp from '../../assets/thumbs-up-line.svg'
 import ThumbsDown  from '../../assets/thumbs-down-line.svg'
 

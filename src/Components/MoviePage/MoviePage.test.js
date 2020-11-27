@@ -67,7 +67,7 @@ describe('MoviePage', () => {
   })
 
   it('should allow a user to add a rating', () => {
-    const { getByAltText, getByText } = render(
+    const { getByAltText } = render(
       <MemoryRouter>
         <MoviePage 
           handleRating={mockHandleRating} 
