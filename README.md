@@ -89,5 +89,20 @@ You should be able to view your ratings!
 
 ![Searching](https://media.giphy.com/media/V43kzlxYGjPV5pal0w/giphy.gif)
 
+#### Viewing movie details and giving a rating
 
+![Rate](https://media.giphy.com/media/8qQOMOA1Gpl1Ra2mVX/giphy.gif)
+
+#### Movie Info Page
+
+[![Screen-Shot-2020-11-27-at-11-03-38-AM.png](https://i.postimg.cc/7Z2sZnCb/Screen-Shot-2020-11-27-at-11-03-38-AM.png)](https://postimg.cc/Xrnc2Fk0)
+
+#### Table
+
+[![Screen-Shot-2020-11-27-at-11-05-06-AM.png](https://i.postimg.cc/K8PPWqk7/Screen-Shot-2020-11-27-at-11-05-06-AM.png)](https://postimg.cc/DSz4Jccm)
+
+
+## Challenges and Reflection
+
+I was a bit nervous but also excited going into this challenge, as an alumni of the Front End program at the Turing School of Software & Design, I had never actually built an API from scratch before. I love immersing myself in new tech and learning more about the Back End has been a priority for me. I have tons of experience with JavaScript and have built microservices with Express.js and used Postgres a bit, so I settled in on this as my Back End stack. One thing I wish I had gotten to on the Back End was Migrations so I could seed the database when the challenge was viewed by YearOne staff. Unfortunately, even with the extension YearOne graciously gave me, I have no more time to work on this project due to previous commitments. I had no problems on the Front End other than I wanted to get more testing done, specifically integration and more sad path unit tests. Thank you YearOne for the opportunity to work on this challenge, I am very happy with what I made.
 
