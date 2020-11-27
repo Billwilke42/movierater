@@ -72,7 +72,7 @@ $ node index.js
 
 9. Clone down this FE repository and cd into project folder.
 
-10. In your browser, go to https://rapidapi.com/rapidapi/api/Movie%20Database%20(IMDB%20Alternative), subscribe and add your given API key to a .env file in the Front End project folder.
+10. If the given API key does not work. In your browser, go to https://rapidapi.com/rapidapi/api/Movie%20Database%20(IMDB%20Alternative), subscribe and add your given API key to a .env file in the Front End project folder.
 
 10. In your terminal run: 
 
