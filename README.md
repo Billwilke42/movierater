@@ -52,6 +52,16 @@ If everything went well you should see something like this on your command line:
 
 6. Cd into movie-rater-api
 
+7. Open the folder in your text-editor and add .env file with necessary variables:
+
+```
+POSTGRES_PASSWORD = (Your password)
+DB_PORT=(Your postgres port)
+DB_HOST=localhost
+DB_DATABASE=movieapi
+DB_USER=(Your postgres username)
+```
+
 7. Run in your terminal:
 
 ```bash
@@ -60,7 +70,9 @@ $ node index.js
 
 8. Open a new terminal window. 
 
-9. Clone down this repository and cd into project folder.
+9. Clone down this FE repository and cd into project folder.
+
+10. In your browser, go to https://rapidapi.com/rapidapi/api/Movie%20Database%20(IMDB%20Alternative), subscribe and add your given API key to a .env file in the Front End project folder.
 
 10. In your terminal run: 
 
